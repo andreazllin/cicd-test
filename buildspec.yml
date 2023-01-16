@@ -26,12 +26,12 @@ phases:
 artifacts:
   files:
     - '**/*'
-  name: test-lin-$(date +%Y-%m-%d)
+  name: custom_app_name-$(date +%Y-%m-%d)
 # artifacts:
 #   files:
 #     - dist/**/*
 #     - package.json
 #     - package-lock.json
 #     - node_modules/**/*
-#   name: test-lin-$(date +%Y-%m-%d)
+#   name: custom_app_name-$(date +%Y-%m-%d)
 

@@ -51,26 +51,26 @@ npm -v
 
 ln -s /.nvm/versions/node/v12.22.12/bin/node /usr/bin/node
 
-SERVICE_UNITFILE="/lib/systemd/system/test_md.service"
+SERVICE_UNITFILE="/lib/systemd/system/custom_app_name.service"
 if [ -f "$SERVICE_UNITFILE" ]; then
     echo "$SERVICE_UNITFILE exists, skipping"
 else
     echo "$SERVICE_UNITFILE does not exist, creating unitfile"
     touch $SERVICE_UNITFILE
     echo -e "[Unit]
-Description=index.js - testing test test test
-Documentation=https://example.com
+Description=custom_app_name
+Documentation=https://custom_app_name.com
 After=network.target
 
 [Service]
 Type=simple
 User=ec2-user
-WorkingDirectory=/home/ec2-user/test/dist
-ExecStart=/usr/bin/node /home/ec2-user/test/dist/index.js
+WorkingDirectory=/home/ec2-user/custom_app_name/dist
+ExecStart=/usr/bin/node /home/ec2-user/custom_app_name/dist/index.js
 Restart=on-failure
 StandardOutput=syslog
 StandardError=syslog
-SyslogIdentifier=test_md.service
+SyslogIdentifier=custom_app_name.service
 Environment=NODE_PORT=3300
 
 [Install]

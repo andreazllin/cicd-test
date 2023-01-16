@@ -1,4 +1,4 @@
 #!/bin/bash
 set +e -x
-systemctl enable test_md.service
-systemctl start test_md.service
+systemctl enable custom_app_name.service
+systemctl start custom_app_name.service
